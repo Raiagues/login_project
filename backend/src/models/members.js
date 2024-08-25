@@ -29,6 +29,10 @@ const members = db.define('members', {
     type: Sequelize.BOOLEAN,
     defaultValue: false
   },
+  isCurrentMember: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: true
+  },
   position: {
     type: Sequelize.STRING(128)
   },

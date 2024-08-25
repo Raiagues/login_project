@@ -48,7 +48,7 @@
         "tags": [
           "Members"
         ],
-        "summary": "New User",
+        "summary": "New member",
         "description": "",
         "parameters": [
           {
@@ -65,11 +65,11 @@
               "properties": {
                 "name": {
                   "type": "string",
-                  "example": "John Doe"
+                  "example": "New Member"
                 },
                 "email": {
                   "type": "string",
-                  "example": "John.Doe@acme.com"
+                  "example": "new_member@example.com"
                 },
                 "password": {
                   "type": "string",
@@ -82,6 +82,32 @@
                 "password"
               ]
             }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/membersInfo": {
+      "get": {
+        "tags": [
+          "Members"
+        ],
+        "summary": "Get all members informations",
+        "description": "",
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
           }
         ],
         "responses": {
@@ -157,7 +183,7 @@
         "tags": [
           "Members"
         ],
-        "summary": "Delete User",
+        "summary": "Delete member",
         "description": "",
         "parameters": [
           {
@@ -189,7 +215,7 @@
         "tags": [
           "Members"
         ],
-        "summary": "Verify credentials of user using email and password and return token",
+        "summary": "Verify credentials of member using email and password and return token",
         "description": "",
         "parameters": [
           {
@@ -200,7 +226,7 @@
               "properties": {
                 "email": {
                   "type": "string",
-                  "example": "user_test@gmail.com"
+                  "example": "user_test_1@gmail.com"
                 },
                 "password": {
                   "type": "string",

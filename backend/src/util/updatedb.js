@@ -8,7 +8,7 @@ const bcrypt = require('bcrypt');
   const passhash = await bcrypt.hash('123456', 2)
   console.log(passhash)
   await memberModel.create({
-    name: 'User Test A', email: 'user_test_1@gmail.com', passhash, isAdmin: true
+    name: 'User Test A', email: 'user_test_1@gmail.com', passhash, isAdmin: true, position: 'Presidente'
   })
 
   await memberModel.create({
