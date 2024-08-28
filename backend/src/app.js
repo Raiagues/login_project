@@ -8,6 +8,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 const logger = require('./util/logger')
 
+const path = require('path')
 // Instantiate an Express Application
 const app = express()
 
@@ -22,7 +23,7 @@ app.use(cors())
 app.use(helmet())
 
 // Frontend code access in static mode
-app.use('/frontend', express.static('./src/frontend'))
+app.use(express.static(path.join(__dirname, 'frontend')))
 
 // Swagger Documentation
 const swaggerUi = require('swagger-ui-express')
