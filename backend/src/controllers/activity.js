@@ -141,4 +141,3 @@ module.exports = {
     res.json({ status: true, message: 'Deleted activity' })
   }
 }
-  
