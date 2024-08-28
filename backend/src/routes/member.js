@@ -7,7 +7,6 @@ const access = require('../controllers/access.js')
 router.get('/api/members', access.verifyTokenPresent, member.getMembers)
 // Get All members informations
 router.get('/api/membersInfo', access.verifyTokenPresent, member.getMembersInfo)
-
 // Add new member
 router.post('/api/members', access.verifyTokenPresent, access.isAdmin, member.newMember)
 // Update member's information

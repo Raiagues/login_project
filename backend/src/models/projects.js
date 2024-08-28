@@ -13,6 +13,9 @@ const projects = db.define('projects', {
     },
     unique: true
   },
+  briefDescription: {
+    type: Sequelize.TEXT
+  },
   description: {
     type: Sequelize.TEXT
   },

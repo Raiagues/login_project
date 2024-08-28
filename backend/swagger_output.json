@@ -24,7 +24,7 @@
         "tags": [
           "Members"
         ],
-        "summary": "Get all members",
+        "summary": "Get all members names and emails",
         "description": "",
         "parameters": [
           {
@@ -252,21 +252,38 @@
         "tags": [
           "Projects"
         ],
-        "summary": "Lister toutes les communautes",
+        "summary": "List all projects",
         "description": "",
+        "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
       },
       "post": {
         "tags": [
           "Projects"
         ],
-        "summary": "Créer une communaute",
+        "summary": "Create a new project (only for admins)",
         "description": "",
         "parameters": [
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          },
           {
             "name": "obj",
             "in": "body",
@@ -275,16 +292,41 @@
               "properties": {
                 "name": {
                   "type": "string",
-                  "example": "New community"
+                  "example": "New project"
                 },
-                "imgPath": {
+                "briefDescription": {
                   "type": "string",
-                  "example": "https://i.redd.it/e7nrih7kk8431.jpg"
+                  "example": "blablablabla"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "origin": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "shortTermGoals": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "midTermGoals": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "longTermGoals": {
+                  "type": "string",
+                  "example": "..."
                 }
               },
               "required": [
                 "name",
-                "imgPath"
+                "briefDescription",
+                "description",
+                "origin",
+                "shortTermGoals",
+                "midTermGoals",
+                "longTermGoals"
               ]
             }
           }
@@ -293,49 +335,156 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
       }
     },
-    "/api/projects/{id}": {
-      "put": {
+    "/api/projects/{pid}": {
+      "get": {
         "tags": [
           "Projects"
         ],
-        "summary": "Sortir d",
+        "summary": "List informations from project",
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "pid",
             "in": "path",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
             "type": "string"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Update a project (only for admins)",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "New project"
+                },
+                "briefDescription": {
+                  "type": "string",
+                  "example": "blablablabla"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "origin": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "shortTermGoals": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "midTermGoals": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "longTermGoals": {
+                  "type": "string",
+                  "example": "..."
+                }
+              },
+              "required": [
+                "name",
+                "briefDescription",
+                "description",
+                "origin",
+                "shortTermGoals",
+                "midTermGoals",
+                "longTermGoals"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
       },
       "delete": {
         "tags": [
           "Projects"
         ],
-        "summary": "Sortir d",
+        "summary": "Delete a project (only for admins)",
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "pid",
             "in": "path",
             "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
             "type": "string"
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
       }
     }
   }
