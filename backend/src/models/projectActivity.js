@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize')
 const db = require('./database.js')
 const projects = require('./projects.js')
-const activities = require('./activities.js')
-const projectActivity = db.define('activities', {
+const activities = require('./activity.js')
+const projectActivity = db.define('projectActivity', {
   projectId: {
     primaryKey: true,
     type: Sequelize.INTEGER,

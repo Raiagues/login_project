@@ -51,12 +51,25 @@ module.exports = {
     res.json({ status: true, message: 'Returning members', data })
   },
 
-  async getMembersInfo (req, res) {
+  async getMemberInfo (req, res) {
     // #swagger.tags = ['Members']
     // #swagger.summary = 'Get all members informations'
 
-    const data = await memberModel.findAll({ attributes: ['id', 'name', 'email', 'position', 'description', 'yearJoined', 'imgPath', 'linkedinLink', 'cvLink', 'lattesLink', 'githubLink'] })
-    res.json({ status: true, message: 'Returning members', data })
+    const member = await memberModel.findAll({
+      attributes: ['id', 'name', 'email', 'position', 'description', 'yearJoined', 'imgPath', 'linkedinLink', 'cvLink', 'lattesLink', 'githubLink'],
+      where: { id: req.params.id }
+    })
+
+    // Check if the member array is empty
+    if (member.length === 0) {
+      return res.json({
+        status: false,
+        message: 'No member found with the given ID',
+        projects: []
+      })
+    }
+
+    res.json({ status: true, message: 'Returning all informations from member', member })
   },
 
   async updateMember (req, res) {

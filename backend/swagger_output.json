@@ -96,7 +96,7 @@
         ]
       }
     },
-    "/api/membersInfo": {
+    "/api/members/{id}": {
       "get": {
         "tags": [
           "Members"
@@ -104,6 +104,12 @@
         "summary": "Get all members informations",
         "description": "",
         "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "x-access-token",
             "in": "header",
@@ -120,9 +126,7 @@
             "apiKeyAuth": []
           }
         ]
-      }
-    },
-    "/api/members/{id}": {
+      },
       "put": {
         "tags": [
           "Members"
@@ -465,6 +469,285 @@
         "parameters": [
           {
             "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/projects/{pid}/activities": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "List all activities",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Create a new activity (only for admins)",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "New activity"
+                },
+                "briefDescription": {
+                  "type": "string",
+                  "example": "blablablabla"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "date": {
+                  "type": "string",
+                  "example": "2024-03-30"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "remainingPlaces": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "link": {
+                  "type": "string",
+                  "example": "..."
+                }
+              },
+              "required": [
+                "name",
+                "briefDescription",
+                "description",
+                "date",
+                "location",
+                "remainingPlaces",
+                "link"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      }
+    },
+    "/api/projects/{pid}/activities/{aid}": {
+      "get": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "List informations from activity",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "aid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Update an activity (only for admins)",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "aid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "x-access-token",
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "New activity"
+                },
+                "briefDescription": {
+                  "type": "string",
+                  "example": "blablablabla"
+                },
+                "description": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "date": {
+                  "type": "string",
+                  "example": "2024-03-30"
+                },
+                "location": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "remainingPlaces": {
+                  "type": "string",
+                  "example": "..."
+                },
+                "link": {
+                  "type": "string",
+                  "example": "..."
+                }
+              },
+              "required": [
+                "name",
+                "briefDescription",
+                "description",
+                "date",
+                "location",
+                "remainingPlaces",
+                "link"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Activities"
+        ],
+        "summary": "Delete an activity (only for admins)",
+        "description": "",
+        "parameters": [
+          {
+            "name": "pid",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "aid",
             "in": "path",
             "required": true,
             "type": "string"

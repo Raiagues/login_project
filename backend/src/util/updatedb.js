@@ -1,5 +1,8 @@
 const memberModel = require('../models/members.js')
 const projectModel = require('../models/projects.js')
+const activityModel = require('../models/activity.js')
+const projectActivityModel = require('../models/projectActivity.js')
+
 const bcrypt = require('bcrypt');
 
 (async () => {
@@ -40,5 +43,21 @@ const bcrypt = require('bcrypt');
     shortTermGoals: 'Immediate goals for Project Beta.',
     midTermGoals: 'Mid-term goals for Project Beta.',
     longTermGoals: 'Long-term goals for Project Beta.'
+  })
+
+  await activityModel.create({
+    name: 'Activity Test',
+    briefDescription: 'A brief description of Activity Test.',
+    description: 'A detailed description of what Activity Test is about.',
+    date: new Date('2024-09-15T14:00:00Z'),
+    location: 'Conference Room A',
+    remainingPlaces: 50,
+    link: 'http://example.com/activity-test',
+    projectId: 1
+  })
+
+  await projectActivityModel.create({
+    projectId: 1,
+    activityId: 1
   })
 })()
