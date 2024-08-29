@@ -5,30 +5,35 @@ import selection from './pages/Selection';
 import background from '../assets/images/init/spaceshuttle.png';
 import aboutUsImage from '../assets/images/about/about_us.png';
 import aboutUsImage2 from '../assets/images/about/about_us2.png';
+import s3 from '../assets/images/projects/icons/s-3.png';
+import s2 from '../assets/images/projects/icons/s-2.png';
+import s4 from '../assets/images/projects/icons/s-4.png';
+import s6 from '../assets/images/projects/icons/s-6.png';
+
 
 import './../styles/pages/MainPage.css'; 
 
 const projetos = [
   {
-    img: '../assets/images/projects/icons/s-3.png',
+    img: s3,
     title: 'Minifoguetes',
     description: 'Realizamos workshops sobre minifoguetes em escolas públicas da região, onde apresentamos princípios básicos de propulsão, aerodinâmica e construção de foguetes, além de auxiliar os alunos construírem e lançarem seus próprios minifoguetes.',
     link: 'pages/projetos/minifoguetes.html',
   },
   {
-    img: '../assets/images/projects/icons/s-2.png',
+    img: s2,
     title: 'Revista Acadêmica',
     description: 'Publicamos revistas acadêmicas periódicas contendo notícias do setor aeroespacial, trabalhos realizados pelos alunos, apresentações em congressos, bem como os projetos de pesquisa, ensino e extensão da UFSM.',
     link: 'pages/projetos/revista.html',
   },
   {
-    img: '../assets/images/projects/icons/s-4.png',
+    img: s4,
     title: 'Minicursos',
     description: 'Organizamos semanas de minicursos gratuitos sobre os principais softwares e ferramentas utilizados na engenharia aeroespacial.',
     link: 'pages/projetos/minicursos.html',
   },
   {
-    img: '../assets/images/projects/icons/s-6.png',
+    img: s6,
     title: 'Inglês Acadêmico',
     description: 'Desenvolvemos minicursos, workshops, aulas de conversação e atividades em inglês com foco no contexto acadêmico e profissional, preparando alunos para processos seletivos e entrevistas em inglês.',
     link: 'pages/projetos/ingles.html',
