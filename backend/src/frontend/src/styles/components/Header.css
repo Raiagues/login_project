@@ -45,3 +45,36 @@
 #menu-btn:hover{
   color: var(--main-color);
 }
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 115%; right: 2rem;
+    background-color: #0A1128;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: .5rem;
+    width: 30rem;
+    transform: scale(0);
+    transform-origin: top right;
+    opacity: 0;
+  }
+  .header .navbar.active {
+    transform: scale(1);
+    opacity: 1;
+  }
+  .header .navbar a {
+    font-size: 2rem;
+    display: block;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .5rem;
+  }
+  .header .navbar a:hover {
+    color: #fff;
+    background: #283254;
+  }
+}

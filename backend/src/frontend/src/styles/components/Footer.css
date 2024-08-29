@@ -1,6 +1,6 @@
 .footer{
   margin-top: 1rem;
-  background: var(--bg);
+  background: var(--black);
   padding-bottom: 9rem;
 }
 
@@ -13,7 +13,7 @@
 .footer .box-container .box h3{
   font-size: 2.5rem;
   padding:1rem 0;
-  color:var(--black);
+  color:var(--white);
 }
 
 .footer .box-container .box a{

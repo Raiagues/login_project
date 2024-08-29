@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300&display=swap');
  
-:root{
-    --main-color:#0177B5;
-    --black:#dedede;
-    --light-color:#d5d7de;
-    --bg:#0A1128;
-    --border:.1rem solid rgba(0,0,0,.1);
-    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
-    --not-selected-color: #A6A6A6
+:root {
+    --main-color: #0177B5;
+    --black: #0A1128;
+    --white: #ffff;
+    --light-color: #d5d7de;
+    --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    --not-selected-color: #A6A6A6;
+    --btn-black-background: #283254;
 }
 
 *{
@@ -30,17 +31,40 @@ section{
     padding: 2rem 9%;
 }
 
-.heading{
-    text-align: center;
-    padding-bottom: 3rem;
-    font-size: 4rem;
-    color: #0A1128;
+h2 {
+    font-size: 2rem;
+    color: var(--black);
+    line-height: 1.8;
+    text-transform: uppercase; 
+    margin-bottom: 2rem; 
 }
 
-.heading span{
-    color: var(--main-color);
-    border-radius: .5rem;
-    padding:0 1.5rem;
+h4 {
+    font-size: 1.5rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+p {
+    font-size: 1.5rem;
+    color: var(--black);
+    line-height: 1.8;
+    margin-bottom: 2rem; 
+}
+
+ul {
+    font-size: 1.5rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+.heading {
+    color: var(--black);
+    font-size: 3.5rem;
+    text-transform: uppercase; 
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 3rem;
 }
 
 .box {
@@ -48,5 +72,50 @@ section{
     justify-content: space-between;
     width: 100%; 
     height: auto; 
-  }
+}
    
+.btn-white, .btn-black {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .6rem .6rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--white);
+    background: var(--main-color);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-transform: uppercase;  
+    font-weight: 700; 
+    margin-right: 20px;  
+}
+
+.btn-white::before, .btn-black::before {
+    bottom: 20px;
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: var(--btn-black-background);
+    z-index: -1;
+    transition: .2s ease-out;
+}
+
+.btn-white:hover::before, .btn-black:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+.btn-white:last-child, .btn-black:last-child {
+    margin-right: 0;  
+}
+   
+.btn-black:hover {
+    color: var(--main-color);
+}
+
+.btn-black::before {
+    background-color: var(--white);
+}
