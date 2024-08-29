@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300&display=swap');
+ 
+:root{
+    --main-color:#0177B5;
+    --black:#dedede;
+    --light-color:#d5d7de;
+    --bg:#0A1128;
+    --border:.1rem solid rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --not-selected-color: #A6A6A6
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .1s ease-out;
+}
+ 
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+    overflow-x: hidden;
+}
+
+section{
+    padding: 2rem 9%;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 3rem;
+    font-size: 4rem;
+    color: #0A1128;
+}
+
+.heading span{
+    color: var(--main-color);
+    border-radius: .5rem;
+    padding:0 1.5rem;
+}
+
+.box {
+    position: relative; 
+    justify-content: space-between;
+    width: 100%; 
+    height: auto; 
+  }
+   

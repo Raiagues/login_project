@@ -1,13 +1,13 @@
+import Header from './components/Header'; 
+import Footer from './components/Footer'; 
 
 const MainPage = () => {
   return (
     <div>
-      <header>
-        <h1>Teste</h1>
-      </header>
+      <Header/>
       <main>
-        <p>Pagina principal</p>
       </main>
+      <Footer/>
     </div>
   );
 };
