@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { AppContext } from './AppContext.jsx';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainPage from './views/MainPage.jsx'
+import Selection from './views/pages/Selection';
 
 import './styles/App.css'
 
@@ -32,6 +33,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainPage backend={backend} token={token}/>}/>
+            <Route path="/selection" element={<Selection backend={backend} token={token}/>} />
           </Routes>
         </BrowserRouter>
     </AppContext.Provider>

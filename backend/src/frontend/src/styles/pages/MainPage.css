@@ -107,7 +107,7 @@
   animation-duration: 3s;
 }
 
-
+/* -------------------- ABOUT US SECTION -------------------- */
 
 .sobre .row{
   display: flex;
@@ -195,6 +195,7 @@
   display: none;
 }
 
+/* -------------------- PROJECTS SECTION -------------------- */
 
 .project-section {
   display: flex;
@@ -202,8 +203,6 @@
   align-items: center;
   text-align: center;
 }
-
-
 
 #projects-container .btn{
   font-size: 1.5rem;
@@ -213,7 +212,6 @@
   transform: translateX(-50%);  
   margin-bottom: 20px; 
 }
-
 
 .description {
   display: none;
@@ -228,8 +226,6 @@
   color: #ffffff;
   font-weight: bold;
 }
-
-
 
 .project-list {
   list-style: disc; 
@@ -272,15 +268,12 @@
   box-shadow: var(--box-shadow);
   border-radius: .5rem;
   padding: 4rem 2rem;
-
 }
 
 .projetos .box-container .box img{
   height: 10rem;
 }
  
-
-
 .projetos .box-container .box h3{
   color: var(--black);
   font-size: 2.5rem;
@@ -289,24 +282,120 @@
 
 .projetos .box-container .box p{
   color: #283254;
-  /* font-size: 1.5rem; */
   padding: 1rem 2rem;
-  /* line-height: 1.8; */
   text-align: justify; 
 }
 
-
 .project-section, .sector-section, .comp-section {
-margin-bottom: 20px; 
-display: flex;
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
+  margin-bottom: 20px; 
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .project-section h2, .sector-section h2 {
-margin-bottom: 20px; 
+  margin-bottom: 20px; 
+}
+
+/* -------------------- CONTACT SECTION -------------------- */
+
+.contato .icons-container{
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+  gap: 1.5rem;
+}
+
+.contato .icons-container .icons{
+  padding: 2.5rem;
+  text-align: center;
+  border: var(--border);
+  border-radius: .5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.contato .icons-container .icons i{
+  height: 6rem;
+  width: 6rem;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+.contato .icons-container .icons h3{
+font-size: 2rem;
+color: #0A1128;
+line-height: 1.8;
+margin-bottom: 2rem;   
+margin-bottom: 20px;     
+}
+
+.contato .icons-container .icons h4{
+  color: #283254;
+  line-height: 1.8;
+  font-size: 1.5rem;
+}
+
+.contato .icons-container .icons p{
+  color: #283254;
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+.contato .row {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+.contato .row .map{
+  flex: 1 1 45rem;
+  width: 100%;
+  padding: 2rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  border-radius: .5rem;
+}
+
+.contato .row form{
+  flex: 1 1 45rem;
+  padding: 2rem;
+  border: var(--border);
+  box-shadow: var(--box-shadow);
+  border-radius: .5rem;
+  background-color: white;
+}
+
+.contato .row form .box{
+  padding: .8rem;
+  font-size: 1.2rem;
+  color: #0A1128;
+  box-shadow: var(--box-shadow);
+  background: #dedede;
+  text-transform: none;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contato .row form textarea{
+  height: 20rem;
+  resize: none;
+}
+
+.contato .row form .box:focus {
+background-color: #b9bfd3;  
+ outline: none;  
+}
+
+.contato .row form label {
+  display: block; 
+  margin-bottom: 8px; 
+  color: #0A325E;
+  font-size: 1.2rem;
 }
 
 
@@ -325,6 +414,14 @@ margin-bottom: 20px;
 @media (max-width: 1350px) {
   .inicio .image img {
     width: 23vw;
+  }
+  .contato .row {
+    justify-content: center;  
+  }
+  .contato .row .map,
+  .contato .row form {
+      flex: 1 1 100%; 
+      max-width: 100%; 
   }
 }
 
@@ -353,6 +450,14 @@ margin-bottom: 20px;
   .sobre .content .title {
     font-size:2.5rem;
   }
+  .contato .row {
+    justify-content: center;  
+  }
+  .contato .row .map,
+  .contato .row form {
+      flex: 1 1 100%; 
+      max-width: 100%; 
+  }
 }
 
 @media (max-width: 1000px) and (min-width: 895px),
@@ -367,6 +472,14 @@ margin-bottom: 20px;
   }
   .inicio {
     padding-top: 12%;
+  }
+  .contato .row {
+    justify-content: center;  
+  }
+  .contato .row .map,
+  .contato .row form {
+      flex: 1 1 100%; 
+      max-width: 100%; 
   }
 }
 

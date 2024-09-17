@@ -119,3 +119,97 @@ ul {
 .btn-black::before {
     background-color: var(--white);
 }
+
+button[type="submit"] {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #ffffff;
+    background: var(--main-color);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    text-transform: uppercase;  
+    font-weight: 700; 
+    margin-right: 20px;  
+    margin-bottom: 10px; 
+    border: none;  
+    transition: color 0.3s ease, background-color 0.3s ease; 
+}
+
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 0%;
+    background-color: #062649;
+    z-index: -1;
+    transition: .2s ease-out;
+}
+
+button[type="submit"]:hover {
+    color: #ffffff;
+}
+
+button[type="submit"]:hover::before {
+    width: 100%;  
+} 
+
+#popup {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);  
+    color: black;
+    text-align: center;
+    padding-top: 400px;
+    z-index: 1000;
+    align-items: center;  
+    justify-content: center;   
+}
+  
+#popup .popup-content {
+    background-color: #fff; 
+    border: 8px solid var(--main-color);    
+    padding: 3rem 2rem;  
+    border-radius: 0; 
+    max-width: 300px;  
+    max-height: 200px;  
+    left: 40%;
+    top: 0;
+    overflow: auto;
+    position: relative;  
+    box-sizing: border-box;  
+}
+  
+.popup-close {
+    color: #0A325E;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    position: absolute;
+    right: 1rem; 
+    top: 1rem; 
+    cursor: pointer;
+}
+  
+.popup-close:hover,
+.popup-close:focus {
+    color: var(--main-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+#popup-message {
+    font-size: 1.2rem;  
+    color: #062649;
+    text-align: center;
+}
+  
+  

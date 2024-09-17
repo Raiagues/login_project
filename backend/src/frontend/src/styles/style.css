@@ -781,7 +781,6 @@ button[type="submit"]:hover::before, .black-btn:hover::before {
 
 }
 
-
 .logo img {
   height: 30px;  
   vertical-align: middle;
@@ -1058,6 +1057,8 @@ h2 {
   text-align: center;
 }
 
+
+
 @media (max-width: 1500px) {
   .inicio .image img {
     width: 20vw;   
@@ -1089,7 +1090,7 @@ h2 {
   #popup .popup-content {
     left: 40%;
   }  
-  .contato .row {
+  /* .contato .row {
     justify-content: center;  
   }
 
@@ -1097,7 +1098,7 @@ h2 {
   .contato .row form {
       flex: 1 1 100%; 
       max-width: 100%; 
-  }
+  } */
 }
 
 @media (max-width: 1130px) {
@@ -1131,21 +1132,21 @@ h2 {
   #popup .popup-content {
     left: 35%;
   }  
-  .contato .row {
+  /* .contato .row {
     justify-content: center;  
   }
   .contato .row .map,
   .contato .row form {
       flex: 1 1 100%; 
       max-width: 100%; 
-  }
+  } */
 }
 
 @media (max-width: 1024px) {
   .valores .box {
       flex-basis: calc(30% - 1.5rem);
   }  
-  .contato .row {
+  /* .contato .row {
     justify-content: center;  
   }
 
@@ -1153,7 +1154,7 @@ h2 {
   .contato .row form {
       flex: 1 1 100%; 
       max-width: 100%; 
-  }
+  } */
   
 }
 
@@ -1195,7 +1196,7 @@ h2 {
     left: 35%;
   }
     
-  .contato .row {
+  /* .contato .row {
     justify-content: center;  
   }
 
@@ -1203,7 +1204,7 @@ h2 {
   .contato .row form {
       flex: 1 1 100%; 
       max-width: 100%; 
-  }
+  } */
 } 
 
 
@@ -1224,7 +1225,7 @@ h2 {
     left: 35%;
   }  
   
-  .contato .row {
+  /* .contato .row {
     justify-content: center;  
   }
 
@@ -1232,7 +1233,7 @@ h2 {
   .contato .row form {
       flex: 1 1 100%; 
       max-width: 100%; 
-  }
+  } */
 } 
 
 @media (max-width: 895px) and (min-width: 700px) {
@@ -1251,7 +1252,7 @@ h2 {
     left: 30%;
   }
     
-  .contato .row {
+  /* .contato .row {
     justify-content: center;  
   }
 
@@ -1259,7 +1260,7 @@ h2 {
   .contato .row form {
       flex: 1 1 100%; 
       max-width: 100%; 
-  }
+  } */
 } 
  
 

@@ -4,9 +4,12 @@ module.exports = {
     commonjs: true,
     es2021: true
   },
+  globals: {
+    process: 'readonly'
+  },
   extends: [
     'standard',
-    "plugin:cypress/recommended"
+    'plugin:cypress/recommended'
   ],
   parserOptions: {
     ecmaVersion: 'latest'

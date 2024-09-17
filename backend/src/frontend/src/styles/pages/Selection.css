@@ -1,0 +1,33 @@
+
+#processo-seletivo .container {
+  display: flex;
+  padding: 10px 10px;
+}
+
+.comp-section .main-content h3 {
+  font-size: 1.5rem;
+  color: #0A1128;
+  line-height: 1.8;
+  margin-bottom: 2px;   
+ }
+
+.content-display {
+  width: 70%;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.heading {
+  margin-top: 80px;
+}
+
+@media (max-width: 500px) {
+  #processo-seletivo .container {
+    align-items: center;
+    flex-direction: column;
+  }
+  .content-display {
+    display: none;
+  }
+}
